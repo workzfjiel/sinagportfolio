@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(cd \"C:\\\\Users\\\\JL\\\\Documents\\\\PROJECTS12\\\\MYFINALPORTFOLIO\"; Start-Process powershell -ArgumentList \"-NoExit\", \"-Command\", \"npm run dev\" -WindowStyle Normal)",
+      "Bash(npm init *)",
+      "Bash(npm install *)",
+      "Bash(curl -sf http://localhost:5173)",
+      "Bash(where ffmpeg *)",
+      "Bash(ffmpeg -version)",
+      "WebFetch(domain:github.com)",
+      "mcp__nano-banana__get_configuration_status",
+      "mcp__nano-banana__generate_image"
+    ]
+  }
+}
