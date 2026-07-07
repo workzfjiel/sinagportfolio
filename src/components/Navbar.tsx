@@ -1,6 +1,6 @@
 const navItems = [
   { label: 'Work', href: '#work' },
-  { label: 'Services', href: '#services' },
+  { label: 'Services', href: '#what-we-do' },
   { label: 'About', href: '#about' },
   { label: 'Contact', href: 'mailto:patulayjohnloyd16@gmail.com' },
 ];

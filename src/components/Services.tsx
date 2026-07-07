@@ -1,7 +1,14 @@
 import { useRef } from 'react';
 import { motion, useScroll, useSpring, useTransform, useMotionValueEvent } from 'framer-motion';
 import type { MotionValue } from 'framer-motion';
-import { services } from '../data/services';
+
+// Brand manifesto lines, timed to the light beam growing across the frame
+const MANIFESTO = [
+  'Every business has a story worth seeing.',
+  'Most are just waiting for the light.',
+  'We design, build, and animate until it shows.',
+  'One small team. Full effort. No shortcuts.',
+];
 
 // Encoded with a keyframe on every frame (-g 1) so currentTime seeks are instant
 const VIDEO_SRC = '/services-light.mp4';
@@ -43,9 +50,9 @@ function Beat({ progress, start, end, openAtStart, holdAtEnd, children }: BeatPr
   );
 }
 
-// Hard windows mapped to the beam: dark intro → beam sweeps (4 services) → starburst peak (CTA)
+// Hard windows mapped to the beam: dark intro → beam sweeps (4 lines) → starburst peak (CTA)
 const INTRO: [number, number] = [0, 0.16];
-const SERVICE_WINDOWS: [number, number][] = [
+const LINE_WINDOWS: [number, number][] = [
   [0.16, 0.34],
   [0.34, 0.52],
   [0.52, 0.7],
@@ -116,33 +123,27 @@ export default function Services() {
           {/* Intro beat — dark frame, beam tip entering */}
           <Beat progress={smooth} start={INTRO[0]} end={INTRO[1]} openAtStart>
             <p className="text-primary/60 text-[10px] md:text-xs tracking-[0.4em] uppercase">
-              Sinag &bull; Services
+              Sinag &bull; Filipino for ray of light
             </p>
             <p className="mt-4 text-gray-500 text-xs md:text-sm tracking-[0.25em] uppercase">
               (keep scrolling)
             </p>
           </Beat>
 
-          {/* One beat per service, timed to the beam's sweep */}
-          {services.map((service, i) => (
+          {/* One manifesto line per beat, timed to the beam's sweep */}
+          {MANIFESTO.map((line, i) => (
             <Beat
-              key={service.id}
+              key={line}
               progress={smooth}
-              start={SERVICE_WINDOWS[i][0]}
-              end={SERVICE_WINDOWS[i][1]}
+              start={LINE_WINDOWS[i][0]}
+              end={LINE_WINDOWS[i][1]}
             >
-              <p className="text-primary/50 text-[10px] md:text-xs tracking-[0.35em] mb-6">
-                {service.number} / 0{services.length}
-              </p>
               <h3
-                className="font-anton font-bold uppercase text-[11vw] md:text-[7.5vw] leading-[0.95]"
+                className="font-anton font-bold uppercase text-[9vw] md:text-[5.5vw] leading-[1.05] max-w-6xl"
                 style={{ color: '#E1E0CC' }}
               >
-                {service.title}
+                {line}
               </h3>
-              <p className="mt-6 text-sm md:text-base text-gray-300 leading-relaxed max-w-md">
-                {service.description}
-              </p>
             </Beat>
           ))}
 

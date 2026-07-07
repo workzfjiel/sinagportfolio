@@ -3,7 +3,7 @@ import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-
 
 const navItems = [
   { label: 'Work', href: '#work' },
-  { label: 'Services', href: '#services' },
+  { label: 'Services', href: '#what-we-do' },
   { label: 'About', href: '#about' },
 ];
 

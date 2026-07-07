@@ -1,10 +1,12 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { MotionConfig, motion, useScroll, useTransform } from 'framer-motion';
+import Lenis from 'lenis';
 import Hero from './components/Hero';
 import About, { AboutBrands } from './components/About';
 import Services from './components/Services';
 import Projects from './components/Projects/Projects';
-import Capabilities from './components/Capabilities';
+import WhatWeDo from './components/WhatWeDo';
+import Statement from './components/Statement';
 import FAQ from './components/FAQ';
 import CTA from './components/CTA';
 import LocationBar from './components/LocationBar';
@@ -43,6 +45,28 @@ function BrandsToServices() {
 }
 
 export default function App() {
+  // Site-wide inertia smooth scrolling; skipped for reduced-motion users
+  useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const lenis = new Lenis({
+      lerp: 0.1,
+      anchors: { offset: -80 },
+    });
+
+    let rafId = 0;
+    const raf = (time: number) => {
+      lenis.raf(time);
+      rafId = requestAnimationFrame(raf);
+    };
+    rafId = requestAnimationFrame(raf);
+
+    return () => {
+      cancelAnimationFrame(rafId);
+      lenis.destroy();
+    };
+  }, []);
+
   return (
     <MotionConfig reducedMotion="user">
       <Cursor />
@@ -52,7 +76,8 @@ export default function App() {
         <About />
         <BrandsToServices />
         <Projects />
-        <Capabilities />
+        <WhatWeDo />
+        <Statement />
         <FAQ />
         <CTA />
         <LocationBar />

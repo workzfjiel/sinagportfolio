@@ -21,8 +21,9 @@
   }
 }
 
+/* Native smooth-behavior off — Lenis drives the scroll (it needs `auto` to work) */
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
   background: #080807;
 }
 
