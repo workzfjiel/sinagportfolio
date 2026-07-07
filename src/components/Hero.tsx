@@ -3,14 +3,15 @@ import { ArrowRight } from 'lucide-react';
 import Navbar from './Navbar';
 import WordsPullUp from './animations/WordsPullUp';
 
-const HERO_VIDEO =
-  'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260405_170732_8a9ccda6-5cff-4628-b164-059c500a2b41.mp4';
+// Ping-pong loop (forward + reversed) so the 4s source loops seamlessly
+const HERO_VIDEO = '/hero-bg.mp4';
 
 export default function Hero() {
   return (
     <section className="h-screen p-4 md:p-6 bg-black">
       <h1 className="sr-only">
-        SINAG — Johnloyd Patulay, web developer &amp; motion designer. Premium digital experiences.
+        SINAG, a three-person creative studio founded by Johnloyd Patulay: web &amp; mobile
+        development, motion graphics, and tech support.
       </h1>
       <div className="relative h-full rounded-2xl md:rounded-[2rem] overflow-hidden">
         {/* Background video */}
@@ -57,8 +58,9 @@ export default function Hero() {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.9, delay: 0.55, ease: [0.16, 1, 0.3, 1] }}
               >
-                Building premium digital experiences — from pixel-perfect landing pages to
-                motion-driven interfaces that stop people mid-scroll.
+                We build websites and mobile apps, design motion graphics, and fix the tech
+                problems nobody else wants to touch. A team of three, led by founder
+                Johnloyd Patulay.
               </motion.p>
 
               <motion.div
@@ -71,7 +73,7 @@ export default function Hero() {
                   href="#work"
                   className="group inline-flex items-center gap-2 bg-primary rounded-full pl-5 pr-1 py-1 w-fit hover:gap-3 transition-all duration-300"
                 >
-                  <span className="text-black font-medium text-sm sm:text-base">See my work</span>
+                  <span className="text-black font-medium text-sm sm:text-base">See our work</span>
                   <div className="bg-black rounded-full w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center transition-transform duration-300 group-hover:scale-110 shrink-0">
                     <ArrowRight className="w-4 h-4" style={{ color: '#DEDBC8' }} />
                   </div>
@@ -83,7 +85,7 @@ export default function Hero() {
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
                     <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
                   </span>
-                  <span className="text-[10px] text-primary/60 tracking-wide">Available for projects</span>
+                  <span className="text-[10px] text-primary/60 tracking-wide">Open for projects &amp; collaborations</span>
                 </div>
               </motion.div>
             </div>

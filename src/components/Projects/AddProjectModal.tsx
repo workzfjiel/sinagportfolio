@@ -100,7 +100,7 @@ export default function AddProjectModal({ isOpen, onClose, onAdd }: AddProjectMo
     if (!file.type.startsWith('video/')) return;
     if (file.size > MAX_VIDEO_BYTES) {
       setVideoError(
-        `Video is ${(file.size / (1024 * 1024)).toFixed(1)}MB — keep uploads under ${MAX_VIDEO_BYTES / (1024 * 1024)}MB, or use a URL instead.`
+        `Video is ${(file.size / (1024 * 1024)).toFixed(1)}MB. Keep uploads under ${MAX_VIDEO_BYTES / (1024 * 1024)}MB, or use a URL instead.`
       );
       return;
     }
@@ -220,7 +220,7 @@ export default function AddProjectModal({ isOpen, onClose, onAdd }: AddProjectMo
                   className="flex-1 py-2 rounded-xl text-xs font-medium transition-all duration-200"
                   style={{
                     background: step === s ? '#DEDBC8' : 'transparent',
-                    color: step === s ? '#000' : '#6b7280',
+                    color: step === s ? '#080807' : '#6b7280',
                     border: step === s ? 'none' : '1px solid rgba(255,255,255,0.06)',
                   }}
                 >
@@ -488,9 +488,9 @@ export default function AddProjectModal({ isOpen, onClose, onAdd }: AddProjectMo
                     onClick={() => setStep('media')}
                     disabled={!title.trim()}
                     className="flex-1 py-3 rounded-xl text-sm font-medium transition-all duration-200 disabled:opacity-30 disabled:cursor-not-allowed"
-                    style={{ background: '#DEDBC8', color: '#000' }}
+                    style={{ background: '#DEDBC8', color: '#080807' }}
                   >
-                    Next — Media
+                    Next: Media
                   </button>
                 </>
               ) : (
@@ -504,7 +504,7 @@ export default function AddProjectModal({ isOpen, onClose, onAdd }: AddProjectMo
                   <button
                     onClick={handleSubmit}
                     className="flex-1 py-3 rounded-xl text-sm font-medium transition-all duration-200"
-                    style={{ background: '#DEDBC8', color: '#000' }}
+                    style={{ background: '#DEDBC8', color: '#080807' }}
                   >
                     Add Project
                   </button>

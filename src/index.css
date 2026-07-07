@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --background: #000000;
+  --background: #080807;
 }
 
 * {
@@ -23,12 +23,12 @@
 
 html {
   scroll-behavior: smooth;
-  background: #000;
+  background: #080807;
 }
 
 ::selection {
   background: #DEDBC8;
-  color: #000;
+  color: #080807;
 }
 
 :focus-visible {
@@ -47,6 +47,7 @@ section[id] {
     scroll-behavior: auto;
   }
   .animate-marquee,
+  .animate-marquee-y,
   .animate-ping,
   .animate-pulse {
     animation: none !important;
@@ -54,7 +55,7 @@ section[id] {
 }
 
 body {
-  background: #000;
+  background: #080807;
   overflow-x: hidden;
 }
 
@@ -79,7 +80,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #000;
+  background: #080807;
 }
 
 ::-webkit-scrollbar-thumb {

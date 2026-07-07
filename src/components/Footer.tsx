@@ -4,7 +4,7 @@ const navItems = [
   { label: 'Work', href: '#work' },
   { label: 'Services', href: '#services' },
   { label: 'About', href: '#about' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Contact', href: 'mailto:patulayjohnloyd16@gmail.com' },
 ];
 
 export default function Footer() {
@@ -20,7 +20,8 @@ export default function Footer() {
               SINAG<span className="text-primary/50">*</span>
             </p>
             <p className="text-xs text-primary/50 max-w-[26ch] leading-relaxed">
-              Ray of light — premium digital experiences by Johnloyd Patulay.
+              Ray of light. Websites, mobile apps, motion graphics &amp; tech support by
+              the SINAG team, founded by Johnloyd Patulay.
             </p>
           </div>
 

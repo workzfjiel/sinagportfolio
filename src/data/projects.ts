@@ -1,54 +1,26 @@
 import type { Project } from '../types';
 
+// Real projects live here. Projects added through the hidden admin mode
+// (type "sinag") are stored in localStorage and merged in at runtime.
 export const defaultProjects: Project[] = [
   {
-    id: 'default-1',
-    title: 'Luxe Fashion House',
-    description: 'Premium landing page for a high-end fashion brand with cinematic scroll animations, editorial typography, and a zero-compromise conversion funnel.',
-    category: 'Landing Page',
-    imageUrl: 'https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=1200&q=80',
-    liveUrl: '#',
-    tags: ['React', 'Framer Motion', 'GSAP'],
-    featured: true,
-  },
-  {
-    id: 'default-2',
-    title: 'Motion Brand Identity',
-    description: 'Full motion graphics package for a Berlin-based tech startup — logo reveal, social media templates, and a cinematic brand reel.',
-    category: 'Motion Graphics',
-    videoUrl: 'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260406_133058_0504132a-0cf3-4450-a370-8ea3b05c95d4.mp4',
-    tags: ['After Effects', 'Cinema 4D', 'Motion'],
-    featured: true,
-  },
-  {
-    id: 'default-3',
-    title: 'Fintech Dashboard',
-    description: 'Web application for personal finance tracking with real-time data visualization and premium UX flows.',
+    id: 'rcc-loan-management',
+    title: 'RCC Rosario Financing Credit Corp',
+    description:
+      'Web based loan management system for a small lending business in Rosario, Batangas. It streamlines their daily workflow with loan applications, client records, and approvals, plus AI credit scoring powered by the Gemini API.',
     category: 'Application',
-    imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80',
-    githubUrl: '#',
-    liveUrl: '#',
-    tags: ['React', 'TypeScript', 'Tailwind'],
-    featured: false,
+    imageUrl: '/projects/rcc-welcome.png',
+    tags: ['Loan Management', 'AI Credit Scoring', 'Gemini API'],
+    featured: true,
   },
   {
-    id: 'default-4',
-    title: 'Noir Restaurant',
-    description: 'Immersive dining experience website with parallax imagery, reservation system, and menu showcase.',
+    id: 'dgym-landing-page',
+    title: "DGYM Rosario",
+    description:
+      "Landing page for The D'Gym, the first premium gym in Rosario, Batangas. Features their training programs, membership pricing, and imagery, with a booking system and a chat bot for member questions.",
     category: 'Landing Page',
-    imageUrl: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80',
-    liveUrl: '#',
-    tags: ['Vite', 'Three.js', 'GSAP'],
-    featured: false,
-  },
-  {
-    id: 'default-5',
-    title: 'Dev Portfolio System',
-    description: 'Open-source portfolio template for developers with dark mode, scroll animations, and modular CMS integration.',
-    category: 'Web Development',
-    imageUrl: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200&q=80',
-    githubUrl: '#',
-    tags: ['React', 'TypeScript', 'Open Source'],
-    featured: false,
+    videoUrl: '/projects/dgym.mp4',
+    tags: ['Landing Page', 'Booking System', 'Chat Bot'],
+    featured: true,
   },
 ];

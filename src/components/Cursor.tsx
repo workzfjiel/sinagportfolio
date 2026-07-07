@@ -57,7 +57,8 @@ export default function Cursor() {
 
   return (
     <>
-      {/* Dot — instant */}
+      {/* Dot — instant. mix-blend-difference inverts against any background,
+          so it stays visible on both the black and light sections */}
       <motion.div
         aria-hidden
         className="fixed pointer-events-none z-[9999] rounded-full"
@@ -68,7 +69,8 @@ export default function Cursor() {
           translateY: '-50%',
           width: hovering ? 8 : 5,
           height: hovering ? 8 : 5,
-          background: '#DEDBC8',
+          background: '#fff',
+          mixBlendMode: 'difference',
           opacity: visible ? 1 : 0,
           transition: 'width 0.2s, height 0.2s, opacity 0.3s',
         }}
@@ -85,7 +87,8 @@ export default function Cursor() {
           translateY: '-50%',
           width: hovering ? 44 : 26,
           height: hovering ? 44 : 26,
-          border: `1px solid rgba(222, 219, 200, ${hovering ? 0.5 : 0.25})`,
+          border: `1px solid rgba(255, 255, 255, ${hovering ? 0.85 : 0.55})`,
+          mixBlendMode: 'difference',
           opacity: visible ? 1 : 0,
           transition: 'width 0.25s cubic-bezier(0.22,1,0.36,1), height 0.25s cubic-bezier(0.22,1,0.36,1), border-color 0.2s, opacity 0.3s',
         }}

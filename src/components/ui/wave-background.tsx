@@ -19,7 +19,7 @@ interface WavesProps {
 export function Waves({
   className = '',
   strokeColor = '#ffffff',
-  backgroundColor = '#000000',
+  backgroundColor = '#080807',
   pointerSize = 0.5,
 }: WavesProps) {
   const containerRef = useRef<HTMLDivElement>(null)
